@@ -8,7 +8,7 @@ from stanza.server.java_protobuf_requests import send_request, build_tree, JavaP
 
 EVALUATE_JAVA = "edu.stanford.nlp.parser.metrics.EvaluateExternalParser"
 
-def build_request(treebank):
+def build_request(treebank, kbest=None):
     """
     treebank should be a list of pairs:  [gold, predictions]
       each predictions is a list of pairs (prediction, score)
