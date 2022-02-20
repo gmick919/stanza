@@ -324,7 +324,7 @@ def get_tqdm():
             from tqdm import tqdm
             return tqdm
     except:
-        if sys.stderr.isatty():
+        if hasattr(sys.stderr, 'isatty') and sys.stderr.isatty():
             from tqdm import tqdm
             return tqdm
     def tqdm(iterable, **kwargs):
